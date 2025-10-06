@@ -1,9 +1,7 @@
 # sumit_test
 to run the test open 2 terminals
-in one run
+in one run the server
 npm run dev
-
-this will run the server
 
 in the other run
 npx ts-node src/sendRecords.ts

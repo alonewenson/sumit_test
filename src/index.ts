@@ -28,6 +28,7 @@ app.post('/records', (req: Request<{}, any, RecordingPart>, res: Response) => {
         return res.status(400).json({ error: 'Record already exists.' });
     }
 
+    // set the part in the mock db
     mockDB.set(idRecord, partIndex, {
         isLast: isLast,
         audioBlock: audioBlock,
@@ -35,6 +36,7 @@ app.post('/records', (req: Request<{}, any, RecordingPart>, res: Response) => {
         status: "pending",
     });
 
+    // add the part to the stt queue
    SttQueue.add(req.body);
     
     res.status(202).json({
