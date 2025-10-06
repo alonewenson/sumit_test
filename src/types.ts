@@ -4,14 +4,13 @@ export interface RecordingPart {
     idRecord: string;    // UUID for the recording session
     partIndex: number;   // Sequential part number (0, 1, 2, ...)
     isLast: boolean;     // Indicates if this is the final part
-    recordingBlock: string; // Simulated base64 or audio chunk data
+    audioBlock: string; // Simulated base64 or audio chunk data
 }
 
 export interface STTResult {
     idRecord: string;
     partIndex: number;
-    filename: string;
-    isLast: boolean;
+    textBlock: string;
 }
 
 
