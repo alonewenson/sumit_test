@@ -1,4 +1,4 @@
-import { RecordingPart, STTResult } from "../types";
+import { RecordingPart } from "../types";
 import { mockDB } from "../utils/db";
 import { FfmpegQueue } from "../utils/ffmpgQue";
 
