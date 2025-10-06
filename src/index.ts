@@ -8,6 +8,9 @@ const app = express();
 const port = 3000;
 app.use(bodyParser.json());
 
+//clear the mock db
+mockDB.clear();
+
 /**
  * POST endpoint to receive audio recording parts and add them to the queue.
  */

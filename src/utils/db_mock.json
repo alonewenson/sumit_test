@@ -1,24 +1,2 @@
 {
-  "1": {
-    "parts": {
-      "0": {
-        "isLast": false,
-        "audioBlock": "a",
-        "textBlock": "a",
-        "status": "stt_done"
-      },
-      "1": {
-        "isLast": false,
-        "audioBlock": "b",
-        "textBlock": "b",
-        "status": "stt_done"
-      }
-    },
-    "lastDoneFFMPEGIndex": 0,
-    "lastDoneSTTIndex": -1,
-    "result": {
-      "text": "",
-      "audio": "a"
-    }
-  }
 }

@@ -4,12 +4,12 @@ import { RecordingPart } from './types';
 const recordingParts: RecordingPart[] = [
     { idRecord: '1', partIndex: 0, isLast: false, audioBlock: 'a' },
     { idRecord: '1', partIndex: 1, isLast: false, audioBlock: 'b' },
-    // { idRecord: '2', partIndex: 2, isLast: false, audioBlock: 'c' },
-    // { idRecord: '2', partIndex: 1, isLast: false, audioBlock: 'b' },
-    // { idRecord: '2', partIndex: 0, isLast: false, audioBlock: 'a' },
-    // { idRecord: '2', partIndex: 3, isLast: false, audioBlock: 'd' },
-    // { idRecord: '1', partIndex: 2, isLast: true, audioBlock: 'c' },
-    // { idRecord: '2', partIndex: 4, isLast: true, audioBlock: 'e' },
+    { idRecord: '2', partIndex: 2, isLast: false, audioBlock: 'c' },
+    { idRecord: '2', partIndex: 1, isLast: false, audioBlock: 'b' },
+    { idRecord: '2', partIndex: 0, isLast: false, audioBlock: 'a' },
+    { idRecord: '2', partIndex: 3, isLast: false, audioBlock: 'd' },
+    { idRecord: '1', partIndex: 2, isLast: true, audioBlock: 'c' },
+    { idRecord: '2', partIndex: 4, isLast: true, audioBlock: 'e' },
 ];
 
 function postJson(path: string, data: unknown): Promise<void> {

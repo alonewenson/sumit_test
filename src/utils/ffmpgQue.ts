@@ -1,13 +1,10 @@
 import { simulateFFMPEG } from "../services/ffmpg";
-import { STTResult } from "../types";
+import { RecordingPart } from "../types";
 
 const QUEUE_INTERVAL_MS = 500;
 setInterval(ffmpegQueueWorker, QUEUE_INTERVAL_MS);
 
-console.log(
-  `FFMPEG Worker started, checking queue every ${QUEUE_INTERVAL_MS}ms.`
-);
-const ffmpegQueue: STTResult[] = [];
+const ffmpegQueue: RecordingPart[] = [];
 
 let isProcessing = false;
 
@@ -24,7 +21,7 @@ async function ffmpegQueueWorker() {
       await simulateFFMPEG(nextPart);
     } catch (error) {
       console.error(
-        `[WORKER ERROR] Failed to process part for ${nextPart.idRecord}:`,
+        `FFMPEG WORKER ERROR Failed to process part for ${nextPart.idRecord}:`,
         error
       );
     }
@@ -34,10 +31,10 @@ async function ffmpegQueueWorker() {
 }
 
 export const FfmpegQueue = {
-  add: (part: STTResult) => {
+  add: (part: RecordingPart) => {
     ffmpegQueue.push(part);
     console.log(
-      `[FFMPEG QUEUE] Added part to queue. ID: ${part.idRecord}, Index: ${part.partIndex}. Current queue size: ${ffmpegQueue.length}`
+      `FFMPEG QUEUE Added part to queue. ID: ${part.idRecord}, Index: ${part.partIndex}. Current queue size: ${ffmpegQueue.length}`
     );
   },
 };

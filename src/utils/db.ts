@@ -57,7 +57,7 @@ interface Database {
   [recordId: string]: RecordingData;
 }
 
-const data: Database = {};
+let data: Database = {};
 
 // save this in db.json
 const saveData = () => {
@@ -114,11 +114,11 @@ export const mockDB = {
 
   // Get the last done index of a record
   getLastDoneSTTIndex(recordId: string): number {
-    return data[recordId].lastDoneFFMPEGIndex;
+    return data[recordId].lastDoneSTTIndex;
   },
 
   setLastDoneSTTIndex(recordId: string, lastDoneIndex: number): void {
-    data[recordId].lastDoneFFMPEGIndex = lastDoneIndex;
+    data[recordId].lastDoneSTTIndex = lastDoneIndex;
     saveData();
   },
 
@@ -147,6 +147,11 @@ export const mockDB = {
 
   setAudioResult(recordId: string, audio: string): void {
     data[recordId].result.audio = audio;
+    saveData();
+  },
+
+  clear(): void {
+    data = {};
     saveData();
   },
 };
